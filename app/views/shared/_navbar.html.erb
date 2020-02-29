@@ -1,33 +1,41 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <h2 class="logo">Atoll</h2>
+  <% end %>
+  <% unless current_page?("/") %>
+    <div class="container-nav">
+      <form novalidate="novalidate" class="simple_form search search-nav" action="/islands" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="query" id="search_query_nav" placeholder="Location" />
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item-button">
+        <%= link_to "Host An Island", new_island_path, class: "nav-link" %>
+      </li>
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+        <li class="nav-item-button">
+          <%= link_to "Log out", destroy_user_session_path, class: "nav-link", method: :delete %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
+        <li class="nav-item-button">
+          <%= link_to dashboard_path, class: "nav-link" do %>
+            <%= image_tag "logo.png", class: "avatar dropdown-toggle" %>
+          <% end %>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <li class="nav-item-button">
+          <%= link_to "Log in", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>

@@ -1,6 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900i&display=swap');
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #000;
+  margin: 0;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  padding: 8px 25px;
+  border-bottom: 1px solid rgba(110, 119, 127, 0.1);
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 1
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +25,38 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+  margin-left: 16px;
+}
+
+.nav-item-button {
+  line-height: 2.5;
+  vertical-align: middle;
+}
+
+.nav-link {
+  z-index: 1;
+  margin-left: 16px;
+  color: #6E777F;
+  transition: color 0.5s ease;
+  &:hover {
+    color: #11AEB7 !important;
+    text-decoration: none;
+  }
+}
+
+.search-nav {
+  width: 500px;
+  height: 40px;
+  position: relative;
+}
+
+.container-nav {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: 0px;
+  width: 0;
 }

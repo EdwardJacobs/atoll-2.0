@@ -1,0 +1,24 @@
+.btn.btn-atoll {
+  color: white;
+  background-color: #11AEB7;
+  transition: background-color 0.5s ease;
+  &:hover {
+    color: white;
+    background-color: #13c8d3 !important;
+    transition: background-color 0.5s ease;
+  }
+}
+
+.btn-book {
+  color: white;
+  padding: 8px 24px;
+  background: #11AEB7;
+  transition: background 0.3s ease;
+}
+
+.btn-book:hover {
+  color: white;
+  background-color: #13c8d3 !important;
+  transition: background-color 0.5s ease;
+}
+
