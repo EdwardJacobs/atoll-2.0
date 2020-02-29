@@ -1,0 +1,38 @@
+h1 {
+  margin-bottom: 16px;
+}
+
+.form-content {
+  margin-top: 72px;
+  margin-left: 100px;
+  vertical-align: middle;
+  padding: 24px 36px;
+  border: 1px solid #E7E7E7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  width: 700px;
+  z-index: 1;
+  background-color: white;
+}
+
+form {
+  position: left;
+  width: 600px;
+}
+
+.form-control {
+  border: 1px solid rgba(110, 119, 127, 0.1);
+  &:focus {
+    border: 1px solid #11AEB7;
+    outline: none !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+}
+
+.form-background-image {
+  height: 100vh;
+  display: inline;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
