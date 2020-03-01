@@ -1,1 +1,23 @@
-
+<div class="main-container">
+  <div class="container-card-title">
+    <div class="cards-title">
+      <h1><%= @islands.count %> Islands found: <strong><%= params[:query].capitalize %></strong></h1>
+    </div>
+    <div class="cards">
+      <% @islands.each do |island| %>
+        <%= link_to island_path(island) do %>
+          <div class="card-trip">
+            <%= cl_image_tag island.photo %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= island.name %></h2>
+                <p><%= island.location %></p>
+              </div>
+              <h2 class="card-trip-pricing">$<%= island.price %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
