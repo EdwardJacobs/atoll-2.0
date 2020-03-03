@@ -13,7 +13,8 @@ class IslandsController < ApplicationController
       {
         lat: island.latitude,
         lng: island.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { islands: island })
+        infoWindow: render_to_string(partial: "info_window", locals: { islands: island }),
+        image_url: helpers.asset_url('https://avatars2.githubusercontent.com/u/5470001?s=200&v=4')
       }
     end
   end

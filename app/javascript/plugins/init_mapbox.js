@@ -1,5 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 
+// Fit map to markers
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
@@ -24,16 +25,17 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/ejacobs/ck7bahan406ec1jqaoq0crxyw'
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-    });
+    addMarkersToMap(map, markers);
+    fitMapToMarkers(map, markers);
   }
 };
 
 export { initMapbox };
+
+
+
+
