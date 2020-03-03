@@ -1,0 +1,18 @@
+<div class="form-content">
+  <div class="container">
+    <div class="form">
+      <h1>Host your island</h1>
+      <%= simple_form_for (@island) do |f| %>
+        <%= f.input :name, placeholder: "Name", label: false %>
+        <%= f.input :location, placeholder: "Location", label: false %>
+        <%= f.input :description, placeholder: "Description", label: false, :as => :text, input_html: { :style=> 'width: 100%;', :rows => 4} %>
+        <%= f.input :price, placeholder: "Price (per night)", label: false %>
+        <%= f.input :photo, label: false%>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit, class:"btn btn-atoll w-100", value:"Host island" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= image_tag "islandhuts.jpg", class:"form-background-image fixed-right"%>
