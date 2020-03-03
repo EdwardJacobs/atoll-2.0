@@ -1,0 +1,29 @@
+#map {
+  height: 100vh;
+  position: sticky;
+  margin-top: -73px;
+  top: 0;
+  z-index: 0;
+}
+
+.map-box a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.map-box a:hover {
+  color: #11AEB7;
+}
+
+.map-box p {
+  font-size: 10px;
+  margin: 0;
+}
+
+.mapboxgl-popup-content {
+  padding: 15px 15px !important;
+  opacity: 0.8 !important;
+}
