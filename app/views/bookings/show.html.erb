@@ -1,0 +1,1 @@
+<h2>Booking Confirmation</h2>
