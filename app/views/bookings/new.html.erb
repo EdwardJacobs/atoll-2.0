@@ -1,12 +1,16 @@
-<div class="form-content">
-  <div class="container">
-    <div class="form">
-      <h1>Booking</h1>
-        <%= simple_form_for [@island, @booking] do |f| %>
-        <%= f.input :start_date, placeholder: "Start date", label: false %>
-        <%= f.input :end_date, placeholder: "End date", label: false %>
-        <%= f.button :submit, class:"btn btn-atoll w-100", value:"Request booking" %>
-        <% end %>
+<%= image_tag "islandhuts.jpg", class:"form-background-image fixed-right"%>
+  <div class="form-content">
+    <div class="container">
+      <div class="form">
+        <h1>Booking</h1>
+          <%= simple_form_for [@island, @booking] do |f| %>
+          <%= f.input :start_date, placeholder: "Start date", label: false %>
+          <%= f.input :end_date, placeholder: "End date", label: false %>
+          <%= f.button :submit, class:"btn btn-atoll w-100", value:"Request booking" %>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+
