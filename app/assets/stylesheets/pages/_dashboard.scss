@@ -1,0 +1,56 @@
+.col-10.offset-1.col-md-6 {
+  box-shadow: 0 8px 12px rgba(0,0,0,0.08);
+  background-color: white;
+  border: 1px rgba(255,255,255,1.98);
+  padding: 24px 36px;
+  vertical-align: middle;
+  width: 50%;
+  margin: 10px 10px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container-dashboard {
+  padding: 56px;
+}
+
+.hosting {
+  padding:16px;
+
+}
+
+.hosting-card {
+
+}
+
+.hosting-details {
+
+}
+
+.hosting-buttons {
+
+}
+
+.hosting-details-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+
+}
+
+// .card-trip-hosting {
+//   margin:0;
+// }
+.hosting h1 {
+  margin-left: 12px;
+}
+
+.hosting-pending {
+  margin-left:12px;
+}
+
+

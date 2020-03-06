@@ -1,0 +1,60 @@
+<div class="container-dashboard">
+  <div class="flexbox">
+    <div class="col-10 offset-1 col-md-6">
+      <div class="hosting">
+      <h1>My bookings</h1>
+        <% current_user.bookings.each do |booking| %>
+          <p class="hosting-pending"><%= booking.status.capitalize %></p>
+          <%= link_to island_path(booking.island) do %>
+          <div class="card-trip">
+            <%= cl_image_tag booking.island.photo%>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= booking.island.name %></h2>
+                <p><%= booking.island.location %></p>
+              </div>
+              <h2 class="card-trip-pricing">$<%= booking.island.price %></h2>
+              <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-10 offset-1 col-md-6">
+      <div class="hosting">
+        <h1>My hostings</h1>
+        <% current_user.islands.each do |island| %>
+          <% island.bookings.each do |booking| %>
+            <div class="hosting-details-buttons">
+              <div class="hosting-details">
+                <p>Your island is booked by: <strong><%= booking.user.first_name.capitalize %></strong></p>
+                <p>From: <%= booking.start_date %> until <%= booking.end_date %></p>
+              </div>
+              <div class="hosting-buttons">
+                <%= link_to "Accept", accept_booking_booking_path(booking), class:"btn btn-book mt-3" %>
+                <%= link_to "Decline", refuse_booking_booking_path(booking), class:"btn btn-book mt-3" %>
+              </div>
+            </div>
+            <div class="hosting-card">
+              <%= link_to island_path(booking.island) do %>
+              <div class="card-trip">
+                <%= cl_image_tag booking.island.photo%>
+                <div class="card-trip-infos">
+                  <div>
+                    <h2><%= booking.island.name %></h2>
+                    <p><%= booking.island.location %></p>
+                  </div>
+                  <h2 class="card-trip-pricing">$<%= booking.island.price %></h2>
+                  <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
+                </div>
+              </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

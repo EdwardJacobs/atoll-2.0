@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new
+    @booking = Booking.new(booking_params)
     @island = Island.find(params[:island_id])
     @booking.user = current_user
     @booking.island = @island
@@ -28,10 +28,10 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def reject_booking
+  def refuse_booking
     @booking = Booking.find(params[:id])
     @booking.status = 'rejected'
-    @booking.save
+    @booking.destroy
     redirect_to dashboard_path
   end
 
