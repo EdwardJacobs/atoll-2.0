@@ -6,17 +6,17 @@
         <% current_user.bookings.each do |booking| %>
           <p class="hosting-pending"><%= booking.status.capitalize %></p>
           <%= link_to island_path(booking.island) do %>
-          <div class="card-trip">
-            <%= cl_image_tag booking.island.photo%>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= booking.island.name %></h2>
-                <p><%= booking.island.location %></p>
+            <div class="card-trip">
+              <%= cl_image_tag booking.island.photo%>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= booking.island.name %></h2>
+                  <p><%= booking.island.location %></p>
+                </div>
+                <h2 class="card-trip-pricing">$<%= booking.island.price %></h2>
+                <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
               </div>
-              <h2 class="card-trip-pricing">$<%= booking.island.price %></h2>
-              <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
             </div>
-          </div>
           <% end %>
         <% end %>
       </div>
@@ -39,17 +39,17 @@
             </div>
             <div class="hosting-card">
               <%= link_to island_path(booking.island) do %>
-              <div class="card-trip">
-                <%= cl_image_tag booking.island.photo%>
-                <div class="card-trip-infos">
-                  <div>
-                    <h2><%= booking.island.name %></h2>
-                    <p><%= booking.island.location %></p>
+                <div class="card-trip">
+                  <%= cl_image_tag booking.island.photo%>
+                  <div class="card-trip-infos">
+                    <div>
+                      <h2><%= booking.island.name %></h2>
+                      <p><%= booking.island.location %></p>
+                    </div>
+                    <h2 class="card-trip-pricing">$<%= booking.island.price %></h2>
+                    <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
                   </div>
-                  <h2 class="card-trip-pricing">$<%= booking.island.price %></h2>
-                  <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> -->
                 </div>
-              </div>
               <% end %>
             </div>
           <% end %>
