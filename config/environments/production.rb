@@ -30,7 +30,7 @@ Rails.application.configure do
 
   config.serve_static_assets = false
 
-  RAILS_ENV=production rake assets:precompile
+  # RAILS_ENV=production rake assets:precompile
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
