@@ -1,7 +1,11 @@
 <div class="main-container">
   <div class="container-card-title">
     <div class="cards-title">
+      <% if @islands.count > 1 %>
       <h1><%= @islands.count %> Islands found: <strong><%= params[:query].capitalize %></strong></h1>
+      <% else %>
+      <h1><%= @islands.count %> Island found: <strong><%= params[:query].capitalize %></strong></h1>
+      <% end %>
     </div>
     <div class="cards">
       <% @islands.each do |island| %>
